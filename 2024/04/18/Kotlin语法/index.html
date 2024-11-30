@@ -18,12 +18,12 @@
 
 
   
-  <meta name="description" content="Kotlin实用扩展函数val nullableValue: String? &#x3D; null nullableValue.withNotNull &#123; value -&gt;     &#x2F;&#x2F; 只有在nullableValue不为空时才会执行此处的代码 &#125;  val flow &#x3D; flowOf(&quot;Hello&quot;, &quot;World&quot;) val live">
+  <meta name="description" content="Kotlin实用扩展函数val nullableValue: String? &#x3D; null nullableValue.withNotNull &#123; value -&gt;     &#x2F;&#x2F; 只有在nullableValue不为空时才会执行此处的代码 &#125;  val flow &#x3D; flowOf(&quot;Hello&quot;, &quot;World&quot;) val liveData &#x3D; flow.toLiveData(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kotlin语法">
 <meta property="og:url" content="https://abysspraise.github.io/2024/04/18/Kotlin%E8%AF%AD%E6%B3%95/index.html">
 <meta property="og:site_name" content="Awareness Knowledge Skill">
-<meta property="og:description" content="Kotlin实用扩展函数val nullableValue: String? &#x3D; null nullableValue.withNotNull &#123; value -&gt;     &#x2F;&#x2F; 只有在nullableValue不为空时才会执行此处的代码 &#125;  val flow &#x3D; flowOf(&quot;Hello&quot;, &quot;World&quot;) val live">
+<meta property="og:description" content="Kotlin实用扩展函数val nullableValue: String? &#x3D; null nullableValue.withNotNull &#123; value -&gt;     &#x2F;&#x2F; 只有在nullableValue不为空时才会执行此处的代码 &#125;  val flow &#x3D; flowOf(&quot;Hello&quot;, &quot;World&quot;) val liveData &#x3D; flow.toLiveData(">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-04-18T15:52:15.000Z">
 <meta property="article:modified_time" content="2024-06-01T05:10:22.618Z">
@@ -135,60 +135,60 @@
     
   </header>
   <div class="sea-article-content sea-doc">
-    <h1 id="Kotlin实用扩展函数"><a href="#Kotlin实用扩展函数" class="headerlink" title="Kotlin实用扩展函数"></a>Kotlin实用扩展函数</h1><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> nullableValue: String? = <span class="hljs-literal">null</span>
-nullableValue.withNotNull &#123; value -&gt;
-    <span class="hljs-comment">// 只有在nullableValue不为空时才会执行此处的代码</span>
-&#125;
+    <h1 id="Kotlin实用扩展函数"><a href="#Kotlin实用扩展函数" class="headerlink" title="Kotlin实用扩展函数"></a>Kotlin实用扩展函数</h1><pre class="language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">val</span> nullableValue<span class="token operator">:</span> String<span class="token operator">?</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+nullableValue<span class="token punctuation">.</span><span class="token function">withNotNull</span> <span class="token punctuation">&#123;</span> value <span class="token operator">-></span>
+    <span class="token comment">// 只有在nullableValue不为空时才会执行此处的代码</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="hljs-keyword">val</span> flow = flowOf(<span class="hljs-string">&quot;Hello&quot;</span>, <span class="hljs-string">&quot;World&quot;</span>)
-<span class="hljs-keyword">val</span> liveData = flow.toLiveData()
+<span class="token keyword">val</span> flow <span class="token operator">=</span> <span class="token function">flowOf</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Hello"</span></span><span class="token punctuation">,</span> <span class="token string-literal singleline"><span class="token string">"World"</span></span><span class="token punctuation">)</span>
+<span class="token keyword">val</span> liveData <span class="token operator">=</span> flow<span class="token punctuation">.</span><span class="token function">toLiveData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<span class="hljs-keyword">val</span> list: List&lt;<span class="hljs-built_in">Int</span>&gt; = emptyList()
-<span class="hljs-keyword">if</span> (list.notEmpty()) &#123;
-    <span class="hljs-comment">// 只有在list不为空时才会执行此处的代码</span>
-&#125;
+<span class="token keyword">val</span> list<span class="token operator">:</span> List<span class="token operator">&lt;</span>Int<span class="token operator">></span> <span class="token operator">=</span> <span class="token function">emptyList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>list<span class="token punctuation">.</span><span class="token function">notEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 只有在list不为空时才会执行此处的代码</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="hljs-keyword">val</span> map = mapOf(<span class="hljs-string">&quot;key1&quot;</span> to <span class="hljs-string">&quot;value1&quot;</span>, <span class="hljs-string">&quot;key2&quot;</span> to <span class="hljs-string">&quot;value2&quot;</span>)
-<span class="hljs-keyword">val</span> value = map.getOrThrow(<span class="hljs-string">&quot;key3&quot;</span>)
+<span class="token keyword">val</span> map <span class="token operator">=</span> <span class="token function">mapOf</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"key1"</span></span> <span class="token keyword">to</span> <span class="token string-literal singleline"><span class="token string">"value1"</span></span><span class="token punctuation">,</span> <span class="token string-literal singleline"><span class="token string">"key2"</span></span> <span class="token keyword">to</span> <span class="token string-literal singleline"><span class="token string">"value2"</span></span><span class="token punctuation">)</span>
+<span class="token keyword">val</span> value <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">getOrThrow</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"key3"</span></span><span class="token punctuation">)</span>
 
-<span class="hljs-comment">//格式化数字和日期</span>
-<span class="hljs-keyword">val</span> number = <span class="hljs-number">1000000</span>
-<span class="hljs-keyword">val</span> formattedNumber = number.toFormattedString()
+<span class="token comment">//格式化数字和日期</span>
+<span class="token keyword">val</span> number <span class="token operator">=</span> <span class="token number">1000000</span>
+<span class="token keyword">val</span> formattedNumber <span class="token operator">=</span> number<span class="token punctuation">.</span><span class="token function">toFormattedString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<span class="hljs-keyword">val</span> drawable = ContextCompat.getDrawable(context, R.drawable.my_drawable)
-<span class="hljs-keyword">val</span> bitmap = drawable.toBitmap()
+<span class="token keyword">val</span> drawable <span class="token operator">=</span> ContextCompat<span class="token punctuation">.</span><span class="token function">getDrawable</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>my_drawable<span class="token punctuation">)</span>
+<span class="token keyword">val</span> bitmap <span class="token operator">=</span> drawable<span class="token punctuation">.</span><span class="token function">toBitmap</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<span class="hljs-keyword">val</span> filePath = <span class="hljs-string">&quot;/storage/emulated/0/Download/my_file.pdf&quot;</span>
-<span class="hljs-keyword">val</span> fileUri = filePath.toUri()
+<span class="token keyword">val</span> filePath <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"/storage/emulated/0/Download/my_file.pdf"</span></span>
+<span class="token keyword">val</span> fileUri <span class="token operator">=</span> filePath<span class="token punctuation">.</span><span class="token function">toUri</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<span class="hljs-keyword">val</span> number = <span class="hljs-number">5</span>
-<span class="hljs-keyword">val</span> formattedNumber = number.applyIf(number &gt; <span class="hljs-number">10</span>) &#123;
-    toFormattedString()
-&#125;</code></pre>
+<span class="token keyword">val</span> number <span class="token operator">=</span> <span class="token number">5</span>
+<span class="token keyword">val</span> formattedNumber <span class="token operator">=</span> number<span class="token punctuation">.</span><span class="token function">applyIf</span><span class="token punctuation">(</span>number <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">toFormattedString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span></code></pre>
 
-<pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> View.<span class="hljs-title">onClick</span><span class="hljs-params">(debounceDuration: <span class="hljs-type">Long</span> = <span class="hljs-number">300</span>L, action: (<span class="hljs-type">View</span>) -&gt; <span class="hljs-type">Unit</span>)</span></span> &#123;
-    setOnClickListener(DebouncedOnClickListener(debounceDuration) &#123;
-        action(it)
-    &#125;)
-&#125;
+<pre class="language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> View<span class="token punctuation">.</span><span class="token function">onClick</span><span class="token punctuation">(</span>debounceDuration<span class="token operator">:</span> Long <span class="token operator">=</span> <span class="token number">300L</span><span class="token punctuation">,</span> action<span class="token operator">:</span> <span class="token punctuation">(</span>View<span class="token punctuation">)</span> <span class="token operator">-></span> Unit<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">setOnClickListener</span><span class="token punctuation">(</span><span class="token function">DebouncedOnClickListener</span><span class="token punctuation">(</span>debounceDuration<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">action</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="hljs-keyword">private</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DebouncedOnClickListener</span>(
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> debounceDuration: <span class="hljs-built_in">Long</span>,
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> clickAction: (View) -&gt; <span class="hljs-built_in">Unit</span>
-) : View.OnClickListener &#123;
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> lastClickTime: <span class="hljs-built_in">Long</span> = <span class="hljs-number">0</span>
+<span class="token keyword">private</span> <span class="token keyword">class</span> <span class="token function">DebouncedOnClickListener</span><span class="token punctuation">(</span>
+    <span class="token keyword">private</span> <span class="token keyword">val</span> debounceDuration<span class="token operator">:</span> Long<span class="token punctuation">,</span>
+    <span class="token keyword">private</span> <span class="token keyword">val</span> clickAction<span class="token operator">:</span> <span class="token punctuation">(</span>View<span class="token punctuation">)</span> <span class="token operator">-></span> Unit
+<span class="token punctuation">)</span> <span class="token operator">:</span> View<span class="token punctuation">.</span><span class="token function">OnClickListener</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token keyword">var</span> lastClickTime<span class="token operator">:</span> Long <span class="token operator">=</span> <span class="token number">0</span>
 
-    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onClick</span><span class="hljs-params">(v: <span class="hljs-type">View</span>)</span></span> &#123;
-        <span class="hljs-keyword">val</span> now = SystemClock.elapsedRealtime()
-        <span class="hljs-keyword">if</span> (now - lastClickTime &gt;= debounceDuration) &#123;
-            lastClickTime = now
-            clickAction(v)
-        &#125;
-    &#125;
-&#125;
-button.onClick(debounceDuration = <span class="hljs-number">500L</span>) &#123;
-    <span class="hljs-comment">// 只有在距离上次点击已经过去500毫秒后才会执行此处的代码</span>
-&#125;</code></pre>
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">onClick</span><span class="token punctuation">(</span>v<span class="token operator">:</span> View<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">val</span> now <span class="token operator">=</span> SystemClock<span class="token punctuation">.</span><span class="token function">elapsedRealtime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>now <span class="token operator">-</span> lastClickTime <span class="token operator">>=</span> debounceDuration<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            lastClickTime <span class="token operator">=</span> now
+            <span class="token function">clickAction</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+button<span class="token punctuation">.</span><span class="token function">onClick</span><span class="token punctuation">(</span>debounceDuration <span class="token operator">=</span> <span class="token number">500L</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 只有在距离上次点击已经过去500毫秒后才会执行此处的代码</span>
+<span class="token punctuation">&#125;</span></code></pre>
 
 
   </div>
