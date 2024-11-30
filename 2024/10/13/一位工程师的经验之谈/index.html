@@ -2,13 +2,13 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <title>集线器、交换机、路由器.md | Awareness Knowledge Skill</title>
+  <title>一位工程师的经验之谈 | Awareness Knowledge Skill</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="Blog">
   <meta name="theme-color" content="#10b981">
 
-  <link rel="canonical" href="https://abysspraise.github.io/2024/08/02/%E9%9B%86%E7%BA%BF%E5%99%A8%E3%80%81%E4%BA%A4%E6%8D%A2%E6%9C%BA%E3%80%81%E8%B7%AF%E7%94%B1%E5%99%A8/">
+  <link rel="canonical" href="https://abysspraise.github.io/2024/10/13/%E4%B8%80%E4%BD%8D%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/">
 
   <link rel="shortcut icon" href="/assets/favicon.svg">
 
@@ -18,20 +18,18 @@
 
 
   
-  <meta name="description" content="集线器 将多个端口的数据通过一个端口转发给总线上连接的所有设备 半双工 同时转发多个端口的数据帧时，会发生冲突碰撞，丢掉数据帧  交换机维护了一张 端口-MAC地址 映射表">
+  <meta name="description" content="原文链接：My Engineering Axioms  摘要 变化是永恒的 您的产品是一项资产，但代码是一项负债 重复比过早抽象的成本要小 代码应该易于删除 现有代码具有强大的影响力 它存在的事实本身就表明它是正确和必要的。希望如此，但并非总是如此。我们需要保持改变它的信心，以及推理是否应该改变的能力。不要让代码本身的存在产生无法删除它的怀疑。   Accidental complexity i">
 <meta property="og:type" content="article">
-<meta property="og:title" content="集线器、交换机、路由器.md">
-<meta property="og:url" content="https://abysspraise.github.io/2024/08/02/%E9%9B%86%E7%BA%BF%E5%99%A8%E3%80%81%E4%BA%A4%E6%8D%A2%E6%9C%BA%E3%80%81%E8%B7%AF%E7%94%B1%E5%99%A8/index.html">
+<meta property="og:title" content="一位工程师的经验之谈">
+<meta property="og:url" content="https://abysspraise.github.io/2024/10/13/%E4%B8%80%E4%BD%8D%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/index.html">
 <meta property="og:site_name" content="Awareness Knowledge Skill">
-<meta property="og:description" content="集线器 将多个端口的数据通过一个端口转发给总线上连接的所有设备 半双工 同时转发多个端口的数据帧时，会发生冲突碰撞，丢掉数据帧  交换机维护了一张 端口-MAC地址 映射表">
+<meta property="og:description" content="原文链接：My Engineering Axioms  摘要 变化是永恒的 您的产品是一项资产，但代码是一项负债 重复比过早抽象的成本要小 代码应该易于删除 现有代码具有强大的影响力 它存在的事实本身就表明它是正确和必要的。希望如此，但并非总是如此。我们需要保持改变它的信心，以及推理是否应该改变的能力。不要让代码本身的存在产生无法删除它的怀疑。   Accidental complexity i">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/AbyssPraise/DrawingBoard/main/image/image-20240802185825194.png">
-<meta property="article:published_time" content="2024-08-02T10:44:34.000Z">
-<meta property="article:modified_time" content="2024-08-10T12:05:23.124Z">
+<meta property="article:published_time" content="2024-10-13T13:50:12.000Z">
+<meta property="article:modified_time" content="2024-10-13T16:42:34.786Z">
 <meta property="article:author" content="AbyssPraise">
-<meta property="article:tag" content="CS">
+<meta property="article:tag" content="好文记录">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/AbyssPraise/DrawingBoard/main/image/image-20240802185825194.png">
 
   <style>
     :root {
@@ -119,31 +117,90 @@
   <main id="sea-main-wrapper">
     <article class="sea-page-card-wrapper">
   <header class="sea-article-header">
-    <h1 class="sea-article-title">集线器、交换机、路由器.md</h1>
+    <h1 class="sea-article-title">一位工程师的经验之谈</h1>
     
       <div class="sea-post-meta sea-post-meta__center">
         <div class="sea-post-time">
   <svg t="1716964550804" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2621" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M805.49888 981.49888l-602.3168-0.76288c-86.59456-8.192-154.56768-81.3056-154.56768-170.01472L48.6144 291.73248c0-94.1568 76.60032-170.75712 170.7776-170.75712l586.10176 0c94.1568 0 170.73152 76.60032 170.73152 170.75712L976.22528 810.7008C976.2304 904.87296 899.63008 981.49888 805.49888 981.49888L805.49888 981.49888zM219.3664 190.57152c-55.79776 0-101.20192 45.38368-101.20192 101.18144l0 518.96832c0 55.79776 45.40416 101.20704 101.20192 101.20704l586.13248 0c55.77728 0 101.16096-45.40928 101.16096-101.20704L906.65984 291.73248c0-55.79776-45.38368-101.18656-101.16096-101.18656L219.3664 190.54592 219.3664 190.57152zM698.84416 290.51904c-25.60512 0-46.38208-20.77696-46.38208-46.38208l0-158.6688c0-25.6 20.77696-46.38208 46.38208-46.38208 25.6 0 46.38208 20.78208 46.38208 46.38208L745.22624 244.1216C745.22624 269.7472 724.46976 290.51904 698.84416 290.51904L698.84416 290.51904zM315.65824 290.51904c-25.60512 0-46.38208-20.77696-46.38208-46.38208l0-158.6688c0-25.6 20.77696-46.38208 46.38208-46.38208 25.6 0 46.38208 20.78208 46.38208 46.38208L362.04032 244.1216C362.04032 269.7472 341.28896 290.51904 315.65824 290.51904L315.65824 290.51904zM534.8864 794.78784l-44.27264 0c-25.6 0-46.38208-20.77696-46.38208-46.38208 0-25.6 20.78208-46.38208 46.38208-46.38208l44.27264 0c25.6 0 46.38208 20.78208 46.38208 46.38208C581.26848 774.01088 560.4864 794.78784 534.8864 794.78784L534.8864 794.78784zM930.79552 452.608 121.24672 452.608c-25.60512 0-46.38208-20.78208-46.38208-46.38208 0-25.60512 20.77696-46.38208 46.38208-46.38208l809.5744 0c25.6 0 46.38208 20.77696 46.38208 46.38208C977.2032 431.82592 956.42624 452.608 930.79552 452.608L930.79552 452.608zM327.92576 649.03168l-44.27264 0c-25.6 0-46.38208-20.78208-46.38208-46.38208 0-25.60512 20.78208-46.38208 46.38208-46.38208l44.27264 0c25.6 0 46.38208 20.77696 46.38208 46.38208C374.30784 628.25472 353.52576 649.03168 327.92576 649.03168L327.92576 649.03168zM534.8864 649.03168l-44.27264 0c-25.6 0-46.38208-20.78208-46.38208-46.38208 0-25.60512 20.78208-46.38208 46.38208-46.38208l44.27264 0c25.6 0 46.38208 20.77696 46.38208 46.38208S560.4864 649.03168 534.8864 649.03168L534.8864 649.03168zM741.27872 649.03168l-44.26752 0c-25.60512 0-46.38208-20.78208-46.38208-46.38208 0-25.60512 20.77696-46.38208 46.38208-46.38208l44.26752 0c25.60512 0 46.38208 20.77696 46.38208 46.38208C787.6608 628.25472 766.90944 649.03168 741.27872 649.03168L741.27872 649.03168zM327.92576 794.78784l-44.27264 0c-25.6 0-46.38208-20.77696-46.38208-46.38208 0-25.6 20.78208-46.38208 46.38208-46.38208l44.27264 0c25.6 0 46.38208 20.78208 46.38208 46.38208C374.30784 774.01088 353.52576 794.78784 327.92576 794.78784L327.92576 794.78784zM741.27872 794.78784l-44.26752 0c-25.60512 0-46.38208-20.77696-46.38208-46.38208 0-25.6 20.77696-46.38208 46.38208-46.38208l44.26752 0c25.60512 0 46.38208 20.78208 46.38208 46.38208C787.6608 774.01088 766.90944 794.78784 741.27872 794.78784L741.27872 794.78784z" p-id="2622"></path></svg>
-  <time datetime="2024-08-02T10:44:34.000Z">2024-08-02</time>
+  <time datetime="2024-10-13T13:50:12.000Z">2024-10-13</time>
 </div>
         
         
   <div class="sea-post-tags">
     <svg t="1716964811431" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6117" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M384 977.152c-20.5312 0-39.8336-7.9872-54.3232-22.4256l-260.4032-260.4032c-14.4896-14.4896-22.4256-33.7408-22.4256-54.3232s7.9872-39.8336 22.4256-54.3232l439.6032-439.6032c24.9344-24.9344 70.2464-43.7248 105.5232-43.7248h230.4c42.3424 0 76.8 34.4576 76.8 76.8v230.4c0 35.2256-18.7904 80.5888-43.6736 105.5232l-439.6032 439.6032a76.1856 76.1856 0 0 1-54.3232 22.4256zM614.4 153.6c-21.248 0-54.272 13.6704-69.2736 28.7232l-439.6032 439.6032c-4.8128 4.8128-7.424 11.2128-7.424 18.1248s2.6624 13.312 7.424 18.0736l260.4032 260.4032c4.8128 4.8128 11.2128 7.424 18.1248 7.424s13.312-2.6624 18.1248-7.424l439.6032-439.6032c15.0016-15.0016 28.7232-48.0768 28.7232-69.3248V179.2a25.6 25.6 0 0 0-25.6-25.6h-230.4z" p-id="6118"></path><path d="M742.4 358.4c-42.3424 0-76.8-34.4576-76.8-76.8S700.0576 204.8 742.4 204.8s76.8 34.4576 76.8 76.8S784.7424 358.4 742.4 358.4z m0-102.4a25.6 25.6 0 1 0 0 51.2 25.6 25.6 0 0 0 0-51.2z" p-id="6119"></path></svg>
-    <a class="tag-link" href="/tags/CS/" rel="tag">CS</a>
+    <a class="tag-link" href="/tags/%E5%A5%BD%E6%96%87%E8%AE%B0%E5%BD%95/" rel="tag">好文记录</a>
   </div>
 
       </div>
     
   </header>
   <div class="sea-article-content sea-doc">
-    <h1 id="集线器"><a href="#集线器" class="headerlink" title="集线器"></a>集线器</h1><ul>
-<li>将多个端口的数据通过一个端口转发给总线上连接的所有设备</li>
-<li>半双工</li>
-<li>同时转发多个端口的数据帧时，会发生冲突碰撞，丢掉数据帧</li>
+    <blockquote>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://martinrue.com/my-engineering-axioms/">My Engineering Axioms</a></p>
+</blockquote>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><ol>
+<li>变化是永恒的</li>
+<li>您的产品是一项资产，但代码是一项负债</li>
+<li>重复比过早抽象的成本要小</li>
+<li>代码应该易于删除</li>
+<li>现有代码具有强大的影响力<ul>
+<li>它存在的事实本身就表明它是正确和必要的。希望如此，但并非总是如此。我们需要保持改变它的信心，以及推理是否应该改变的能力。不要让代码本身的存在产生无法删除它的怀疑。</li>
 </ul>
-<h1 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h1><p>维护了一张 <strong>端口-MAC地址</strong> 映射表</p>
-<p><img src="https://raw.githubusercontent.com/AbyssPraise/DrawingBoard/main/image/image-20240802185825194.png" alt="image-20240802185825194"></p>
+</li>
+<li>Accidental complexity is one of the biggest risks.<ul>
+<li>由于设计不佳、决策不当以及<strong>没有在系统中优先考虑适当的简单性</strong>等因素而发生的</li>
+</ul>
+</li>
+<li>糟糕的个人素质可能会掩盖技术上的卓越<ul>
+<li>做一个别人愿意与之共事的工程师，比技术更重要（除了独立工作者）</li>
+</ul>
+</li>
+<li>你不是你的代码。善待程序员，而不是代码<ul>
+<li>你写了代码，但从那一刻起（即使是 3 分钟前）你已经成长，但代码却没有。关于代码的对话，无论好坏，都不应该涉及个人。保持专业。<strong>谈论代码或问题，但不要谈论编写代码的人</strong>。使用“我们”而不是“你”。有时我会假装我写了别人写的代码，这有助于我避免无意中听起来很个人化。</li>
+</ul>
+</li>
+<li>尊重并耐心对待那些懂得比您少的人</li>
+<li>唯一真正的权威来自于知识，而不是地位</li>
+<li>教学是变相的学习</li>
+<li>提升周围人的技能，而不仅仅是你自己</li>
+<li>等待的时间越长，你就会知道的越多<ul>
+<li>你拖延非必要决定的时间越长，你在做决定时需要依赖的信息就越多。当然，你不能总是拖延决定，但通常你可以，至少你应该考虑现在不知道答案是否真的可以。</li>
+</ul>
+</li>
+<li>A good type system is worth its weight plus some.<ul>
+<li>Having gone backwards and forwards through various static and dynamic languages over my career, I’m currently of the opinion that a good type system is worth its overhead. A good type system shouldn’t carry all that much overhead. If the type system is designed well, it can almost feel like a dynamic language (via features like inference and flow analysis) while removing a whole class of issues that the compiler can handle far better and quicker than you can. Developments like ownership in Rust are a nice example of how this has gone even further than people would have imagined years back.</li>
+</ul>
+</li>
+<li>正确的团队比一切都重要<ul>
+<li>这里的“正确”一词非常主观，而且与具体情况有关，但至少从传闻来看，<strong>同理心、尊重和友谊</strong>是我所参与过的<strong>优秀团队</strong>中反复出现的元素。</li>
+</ul>
+</li>
+<li>坚持使用无趣的技术，除非有充分的理由不这样做</li>
+<li>组建尽可能小的团队，但不要更小。谨慎发展团队</li>
+<li>休息<ul>
+<li>为了发挥出最佳水平，我们必须花时间不工作</li>
+</ul>
+</li>
+<li>Don’t pick a solution until you’ve thought of at least one more</li>
+<li>你可以有自己的观点，但表达方式要避免让别人认为你不会改变他们<ul>
+<li>例如：“我 95% 确定使用 Visual Basic 是个坏主意。”即使只有 95%，这既是让别人质疑你的观点并展开对话的机会，也是你获得新信息后重新修正你的确定性的机会。</li>
+</ul>
+</li>
+<li>可以说“我不知道”或“我需要研究一下才能找到答案”<ul>
+<li>我们的价值不在于我们了解一切的能力，而在于我们学习、发现、回答这些问题和创造新问题的能力。</li>
+</ul>
+</li>
+<li>Writing throwaway code to explore a problem space is underrated<ul>
+<li>犯几次错误然后重新开始可能比第一次就尝试做对更快。</li>
+</ul>
+</li>
+<li>Manage state carefully</li>
+<li>一切都无非是权衡</li>
+<li>好的设计是你可以改变主意而不需要改变太多代码的设计<ul>
+<li>让我想到了《程序员修炼之道》ETC（Easier to change）价值观</li>
+</ul>
+</li>
+</ol>
 
   </div>
 
@@ -151,17 +208,10 @@
     
   <div class="sea-prev-next-wrapper">
     
-      <div class="prev">
-        <span><</span>
-        <a class="link" href="/2024/10/13/%E6%88%91%E4%BB%AC%E6%98%AF%E5%90%A6%E5%BA%94%E8%AF%A5%E4%BB%A5%E4%B8%8D%E5%90%8C%E7%9A%84%E6%96%B9%E5%BC%8F%E7%9C%8B%E5%BE%85%E8%BF%90%E6%B0%94%EF%BC%9F/">
-          我们是否应该以不同的方式看待运气？
-        </a>
-      </div>
-    
     
       <div class="next">
-        <a class="link" href="/2024/05/30/CrashCourseofCS/">
-          CrashCourseofCS
+        <a class="link" href="/2024/10/13/%E6%88%91%E4%BB%AC%E6%98%AF%E5%90%A6%E5%BA%94%E8%AF%A5%E4%BB%A5%E4%B8%8D%E5%90%8C%E7%9A%84%E6%96%B9%E5%BC%8F%E7%9C%8B%E5%BE%85%E8%BF%90%E6%B0%94%EF%BC%9F/">
+          我们是否应该以不同的方式看待运气？
         </a>
         <span>></span>
       </div>
