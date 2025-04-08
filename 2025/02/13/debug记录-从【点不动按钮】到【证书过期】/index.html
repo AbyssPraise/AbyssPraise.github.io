@@ -8,7 +8,7 @@
   <meta name="keywords" content="Blog">
   <meta name="theme-color" content="#10b981">
 
-  <link rel="canonical" href="https://abysspraise.github.io/2025/02/13/debug%E8%AE%B0%E5%BD%95-%E4%BB%8E%E3%80%90%E7%82%B9%E4%B8%8D%E5%8A%A8%E6%8C%89%E9%92%AE%E3%80%91%E5%88%B0%E3%80%90%E8%AF%81%E4%B9%A6%E8%BF%87%E6%9C%9F%E3%80%91/">
+  <link rel="canonical" href="https://roc80.github.io/2025/02/13/debug%E8%AE%B0%E5%BD%95-%E4%BB%8E%E3%80%90%E7%82%B9%E4%B8%8D%E5%8A%A8%E6%8C%89%E9%92%AE%E3%80%91%E5%88%B0%E3%80%90%E8%AF%81%E4%B9%A6%E8%BF%87%E6%9C%9F%E3%80%91/">
 
   <link rel="shortcut icon" href="/assets/favicon.svg">
 
@@ -21,13 +21,13 @@
   <meta name="description" content="耗时两天半解决了一个bug，记录一下 问题描述测试反馈app上的一个模块点不动 排查过程 和前面的一个版本对比了下，发现旧版本没有此问题，新版本有此问题。由此怀疑是客户端问题，于是怀疑是自己合并代码的时候，把原有逻辑搞坏了。 由于和上个版本之间隔了很多commit，中间还有好几个GitMerge，感觉不太好对比两个版本之间的差异，所以决定真机复现一下，看看到底是什么原因。 真机调试的机器超级慢，最">
 <meta property="og:type" content="article">
 <meta property="og:title" content="debug记录--从【点不动按钮】到【证书过期】">
-<meta property="og:url" content="https://abysspraise.github.io/2025/02/13/debug%E8%AE%B0%E5%BD%95-%E4%BB%8E%E3%80%90%E7%82%B9%E4%B8%8D%E5%8A%A8%E6%8C%89%E9%92%AE%E3%80%91%E5%88%B0%E3%80%90%E8%AF%81%E4%B9%A6%E8%BF%87%E6%9C%9F%E3%80%91/index.html">
+<meta property="og:url" content="https://roc80.github.io/2025/02/13/debug%E8%AE%B0%E5%BD%95-%E4%BB%8E%E3%80%90%E7%82%B9%E4%B8%8D%E5%8A%A8%E6%8C%89%E9%92%AE%E3%80%91%E5%88%B0%E3%80%90%E8%AF%81%E4%B9%A6%E8%BF%87%E6%9C%9F%E3%80%91/index.html">
 <meta property="og:site_name" content="Awareness Knowledge Skill">
 <meta property="og:description" content="耗时两天半解决了一个bug，记录一下 问题描述测试反馈app上的一个模块点不动 排查过程 和前面的一个版本对比了下，发现旧版本没有此问题，新版本有此问题。由此怀疑是客户端问题，于是怀疑是自己合并代码的时候，把原有逻辑搞坏了。 由于和上个版本之间隔了很多commit，中间还有好几个GitMerge，感觉不太好对比两个版本之间的差异，所以决定真机复现一下，看看到底是什么原因。 真机调试的机器超级慢，最">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-02-13T14:36:24.000Z">
 <meta property="article:modified_time" content="2025-02-13T15:17:30.973Z">
-<meta property="article:author" content="AbyssPraise">
+<meta property="article:author" content="roc">
 <meta property="article:tag" content="debug">
 <meta name="twitter:card" content="summary">
 
@@ -225,7 +225,7 @@
           
             target="_blank"
           
-          href="https://github.com/AbyssPraise"
+          href="https://github.com/roc80"
         >
           Github
         </a>
@@ -242,7 +242,7 @@
         2024-2025
       
       <span>·</span>
-      AbyssPraise
+      roc
     </div>
     <span class="split-line">|</span>
     <div class="sea-footer-theme-by">
